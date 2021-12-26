@@ -1,14 +1,19 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
     name: "FirstServer",
     platforms: [
-       .macOS(.v10_15)
+       .macOS(.v11)
+    ],
+    products: [
+        .executable(name: "server-app", targets: ["App"]),
+        .executable(name: "server-client", targets: ["Client"])
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
+        .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.6.0"),
     ],
     targets: [
         .target(
@@ -23,10 +28,11 @@ let package = Package(
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
             ]
         ),
-        .executableTarget(name: "Run", dependencies: [.target(name: "App")]),
-        .testTarget(name: "AppTests", dependencies: [
-            .target(name: "App"),
-            .product(name: "XCTVapor", package: "vapor"),
-        ])
+        .target(
+            name: "Client",
+            dependencies: [
+                .product(name: "TokamakShim", package: "Tokamak")
+            ]
+        ),
     ]
 )

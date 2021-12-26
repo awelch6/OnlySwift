@@ -1,9 +1,7 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req in
-        return "It works!"
-    }
+    try app.register(collection: HomeController())
 
     app.get("hello") { req -> String in
         return "Hello, world!"
