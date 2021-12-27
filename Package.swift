@@ -17,15 +17,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "App",
-            dependencies: [
-                .product(name: "Vapor", package: "vapor")
-            ]
-        ),
-        .target(
             name: "Client",
             dependencies: [
                 .product(name: "TokamakShim", package: "Tokamak")
+            ]
+        ),
+        .target(
+            name: "App",
+            dependencies: [
+                .product(name: "Vapor", package: "vapor")
             ]
         ),
     ]
