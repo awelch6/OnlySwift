@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.9.0"),
+        .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.6.0"),
     ],
     targets: [
         .target(
