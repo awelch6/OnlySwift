@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
@@ -17,17 +17,17 @@ let package = Package(
         .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.6.0"),
     ],
     targets: [
-        .target(
+        .executableTarget(
+            name: "App",
+            dependencies: [
+                .product(name: "Vapor", package: "vapor")
+            ]
+        ),
+        .executableTarget(
             name: "Client",
             dependencies: [
                 .product(name: "TokamakShim", package: "Tokamak"),
                 .product(name: "TokamakDOM", package: "Tokamak")
-            ]
-        ),
-        .target(
-            name: "App",
-            dependencies: [
-                .product(name: "Vapor", package: "vapor")
             ]
         ),
     ]
