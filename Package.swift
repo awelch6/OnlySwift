@@ -9,7 +9,7 @@ let package = Package(
     ],
     products: [
         .executable(name: "server-app", targets: ["App"]),
-        .executable(name: "server-client", targets: ["Client"]),
+        .executable(name: "server-client", targets: ["Client"])
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
