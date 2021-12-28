@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "FirstServer",
     platforms: [
-       .macOS(.v11)
+       .macOS(.v11),
+       .iOS(.v13)
     ],
     products: [
         .executable(name: "server-app", targets: ["App"]),
