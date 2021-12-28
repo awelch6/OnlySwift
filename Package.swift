@@ -27,7 +27,6 @@ let package = Package(
             name: "Client",
             dependencies: [
                 .product(name: "TokamakShim", package: "Tokamak"),
-                "JavaScriptKit"
             ]
         ),
     ]
