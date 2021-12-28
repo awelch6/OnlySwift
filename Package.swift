@@ -26,7 +26,7 @@ let package = Package(
         .executableTarget(
             name: "Client",
             dependencies: [
-                .product(name: "TokamakShim", package: "Tokamak")
+                .product(name: "TokamakShim", package: "Tokamak"),
                 "JavaScriptKit"
             ]
         ),
