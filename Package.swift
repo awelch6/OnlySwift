@@ -19,7 +19,8 @@ let package = Package(
         .target(
             name: "Client",
             dependencies: [
-                .product(name: "TokamakShim", package: "Tokamak")
+                .product(name: "TokamakShim", package: "Tokamak"),
+                .product(name: "TokamakDOM", package: "Tokamak")
             ]
         ),
         .target(
