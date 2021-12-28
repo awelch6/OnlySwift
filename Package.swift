@@ -14,13 +14,16 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.6.0"),
+        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("main")),
+        .package(name: "Gtk", url: "https://github.com/rhx/SwiftGtk.git", .branch("gtk3")),
     ],
     targets: [
         .target(
             name: "Client",
             dependencies: [
                 .product(name: "TokamakShim", package: "Tokamak"),
-                .product(name: "TokamakDOM", package: "Tokamak")
+                .product(name: "TokamakDOM", package: "Tokamak"),
+                .product(name: "Gtk", package: "Gtk")
             ]
         ),
         .target(
