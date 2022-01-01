@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "FirstServer",
+    name: "OnlySwift",
     platforms: [
        .macOS(.v11),
        .iOS(.v13)
