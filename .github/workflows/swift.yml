@@ -1,17 +1,23 @@
-name: Swift
+name: Build
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
-  build:
-
+  macos:
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Cache
+      uses: actions/cache@v2.1.7
+      with:
+        # A list of files, directories, and wildcard patterns to cache and restore
+        path: .build
+        # An explicit key for restoring and saving the cache
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        # An ordered list of keys to use for restoring the cache if no cache hit occurred for key
+        restore-keys: |
+          ${{ runner.os }}-spm-
+          
     - name: Build
-      run: swift build -v
+      run: swift build --product server-app -v
