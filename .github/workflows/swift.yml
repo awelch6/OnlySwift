@@ -8,8 +8,11 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
-    - name: Cache
-      uses: actions/cache@v2.1.7
+    - uses: actions/checkout@v2
+    - uses: maxim-lobanov/setup-xcode@v1.1
+      with:
+        xcode-version: latest
+    - uses: actions/cache@v2.1.7
       with:
         # A list of files, directories, and wildcard patterns to cache and restore
         path: .build
