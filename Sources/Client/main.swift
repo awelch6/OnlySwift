@@ -9,8 +9,8 @@ struct Counter2: View {
     var body: some View {
         if count < limit {
             VStack {
-                Button("Increment !") { count += 1 }
-                Text("\(count)")
+                Button("Increment Counter") { count += 1 }
+                Text("Count \(count)")
             }
             .onAppear { print("Counter.VStack onAppear") }
             .onDisappear { print("Counter.VStack onDisappear") }
