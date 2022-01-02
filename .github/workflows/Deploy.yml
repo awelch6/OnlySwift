@@ -24,7 +24,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.TOKEN }}
         with:
-          source-directory: '/Bundle'
+          source-directory: './Bundle'
           destination-github-username: 'awelch6'
           destination-repository-name: 'awelch6.github.io'
           user-email: austinWelch276@icloud.com
