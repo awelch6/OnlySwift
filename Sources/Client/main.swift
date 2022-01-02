@@ -9,7 +9,7 @@ struct Counter2: View {
     var body: some View {
         if count < limit {
             VStack {
-                Button("Increment") { count += 1 }
+                Button("Increment !") { count += 1 }
                 Text("\(count)")
             }
             .onAppear { print("Counter.VStack onAppear") }
@@ -23,7 +23,7 @@ struct Counter2: View {
 struct CounterApp: App {
     var body: some Scene {
         WindowGroup("Counter Demo") {
-            Counter2(count: 5, limit: 15)
+            Counter2(count: 5, limit: 20)
         }
     }
 }
