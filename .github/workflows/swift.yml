@@ -6,7 +6,7 @@ on:
 
 jobs:
   macos:
-    runs-on: mac-latest
+    runs-on: macos-latest
     steps:
     - name: Cache
       uses: actions/cache@v2.1.7
